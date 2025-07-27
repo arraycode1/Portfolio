@@ -200,19 +200,37 @@
         </section>
 
         <!--===== CONTACT =====-->
+          <!--===== CONTACT =====-->
         <section class="contact section" id="contact">
             <h2 class="section-title">Contact</h2>
 
             <div class="contact__container bd-grid">
-                <form action="" class="contact__form">
-                    <input type="text" placeholder="Name" class="contact__input">
-                    <input type="mail" placeholder="Email" class="contact__input">
-                    <textarea name="" id="" placeholder="Tell me about your project, idea, or any questions you have." cols="0" rows="10" class="contact__input"></textarea>
-                    <input type="button" value="Enviar" class="contact__button button">
+                <form action="https://formsubmit.co/mydevwork786@gmail.com" method="POST" class="contact__form">
+                    <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                    <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                    <textarea name="message" placeholder="Tell me about your project, idea, or any questions you have."
+                        cols="0" rows="10" class="contact__input" required></textarea>
+
+                    <!-- Anti-bot honeypot field -->
+                    <input type="text" name="_honey" style="display:none">
+
+                    <!-- Optional: redirect to thank-you page after submit -->
+                    <input type="hidden" name="_next" value="https://arraycode1.github.io/thankyou.html">
+
+                    <!-- Optional: turn off captcha -->
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <button type="submit" class="contact__button button">Enviar</button>
                 </form>
+
             </div>
         </section>
     </main>
+
+    <!-- Thanks You Meassage after Submisiion -->
+    <!-- <h1>Thank You!</h1>
+    <p>Your message has been sent. I’ll get back to you soon.</p>
+    <a href="index.html">Go back to homepage</a> -->
 
     <!--===== FOOTER =====-->
     <footer class="footer">
