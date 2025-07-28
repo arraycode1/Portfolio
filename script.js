@@ -56,3 +56,20 @@ sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{});
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
+
+  const toggleBtn = document.getElementById("toggleBtn");
+  const hiddenItems = document.querySelectorAll(".work__img.hidden");
+
+  let isExpanded = false;
+
+  toggleBtn.addEventListener("click", () => {
+    if (!isExpanded) {
+      hiddenItems.forEach(item => item.classList.remove("hidden"));
+      toggleBtn.textContent = "Show Less";
+    } else {
+      hiddenItems.forEach(item => item.classList.add("hidden"));
+      toggleBtn.textContent = "Show More";
+    }
+
+    isExpanded = !isExpanded;
+  });
