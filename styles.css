@@ -367,6 +367,18 @@ img {
 .work__img img:hover {
   transform: scale(1.1);
 }
+.show-more-container {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.button {
+  border: none;
+}
+
+.hidden {
+  display: none !important;
+}
 
 /* ===== CONTACT =====*/
 .contact__input {
