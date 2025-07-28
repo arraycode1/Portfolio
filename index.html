@@ -169,7 +169,8 @@
         <section class="work section" id="work">
             <h2 class="section-title">Work</h2>
 
-            <div class="work__container bd-grid">
+             <div class="work__container bd-grid" id="workGallery">
+                <!-- First 6 images (shown always) -->
                 <a href="" class="work__img">
                     <img src="/assets/preview (5).png" alt="">
                 </a>
@@ -188,15 +189,19 @@
                 <a href="" class="work__img">
                     <img src="/assets/preview.png" alt="">
                 </a>
-                <a href="" class="work__img">
+                <!-- Extra images (initially hidden) -->
+                <a href="" class="work__img hidden">
                     <img src="/assets/preview (8).png" alt="">
                 </a>
-                <a href="" class="work__img">
+                <a href="" class="work__img hidden">
                     <img src="/assets/preview (9).png" alt="">
                 </a>
-                <a href="" class="work__img">
+                <a href="" class="work__img hidden">
                     <img src="/assets/preview (1).png" alt="">
                 </a>
+            </div>
+        <div class="show-more-container">
+                <button class="button" id="toggleBtn">Show More</button>
             </div>
         </section>
 
