@@ -57,19 +57,23 @@ sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400
 sr.reveal('.home__social-icon',{ interval: 200}); 
 sr.reveal('.skills__data, .work__img, .contact__input',{interval: 200}); 
 
-  const toggleBtn = document.getElementById("toggleBtn");
-  const hiddenItems = document.querySelectorAll(".work__img.hidden");
+const toggleBtn = document.getElementById("toggleBtn");
 
-  let isExpanded = false;
+let isExpanded = false;
 
-  toggleBtn.addEventListener("click", () => {
-    if (!isExpanded) {
-      hiddenItems.forEach(item => item.classList.remove("hidden"));
-      toggleBtn.textContent = "Show Less";
-    } else {
-      hiddenItems.forEach(item => item.classList.add("hidden"));
-      toggleBtn.textContent = "Show More";
-    }
+toggleBtn.addEventListener("click", () => {
+  const hiddenItems = document.querySelectorAll(".work__img.hidden"); // now inside the click event
 
-    isExpanded = !isExpanded;
-  });
+  if (!isExpanded) {
+    hiddenItems.forEach(item => item.classList.remove("hidden"));
+    toggleBtn.textContent = "Show Less";
+  } else {
+    // Now select all items that *should* be hidden
+    const allExtraItems = document.querySelectorAll("#workGallery .work__img:nth-child(n+7)");
+    allExtraItems.forEach(item => item.classList.add("hidden"));
+    toggleBtn.textContent = "Show More";
+  }
+
+  isExpanded = !isExpanded;
+});
+
